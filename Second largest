@@ -1,0 +1,25 @@
+
+// second largest 
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // code here
+        int lar =Integer.MIN_VALUE;
+        int second_lar = Integer.MIN_VALUE;
+        for(int i = 0;i < arr.length;i++ )
+        {
+            if(arr[i] > lar)
+            {
+                 second_lar = lar;
+                 lar =arr[i];
+                 
+            }
+            else if(arr[i] > second_lar && arr[i] < lar)
+            {
+                second_lar = arr[i];
+            }
+        }
+        
+        return(second_lar == Integer.MIN_VALUE) ? -1 : second_lar;
+        
+    }
+}
